@@ -24,12 +24,15 @@ function selectKeyWord()
     numOfGuesses = 10;
     document.querySelector("#keyWord").innerHTML = "";
     document.querySelector("#Guesses").innerText = numOfGuesses;
+    document.querySelector("#letsAlreadyGuessed").innerHTML = "";
 
-    //check if callsigns is empty, if empty alert You Beat the Game
+    //check if callsigns is empty, if empty alert You Finished the Game
     if(callsigns.length == 0)
     {
-        alert("You Beat The Game!");
+        alert("You Finished the Game! Your score is " + winCount);
+        alert("Refresh page to start again!");
         //play celebratory music and change page
+
     }
 
     var temp = Math.floor(Math.random()*callsigns.length);
@@ -37,6 +40,12 @@ function selectKeyWord()
     usedCallsigns.push(keyWord); //push the current keyWord into the usedCallsigns array
     callsigns.splice(temp,1); //delete keyWord from callsigns array
     console.log(keyWord);
+    //display associated image
+    imageLoad();
+
+    //play startupmusic
+    // musicStartUp();
+
     //console.log(usedCallsigns);
     //console.log(callsigns);
     for(i = 0; i<keyWord.length;i++)
@@ -153,6 +162,52 @@ function keyAlreadyInputted(x)
 function gameOver()
 {
     alert("You have exhausted all guesses. The callsign is "+ keyWord);
+    selectKeyWord();
+}
 
+// function musicStartUp()
+// {
+//     document.getElementById("#startupmusic").play();
+// }
+// function play_single_sound() {
+//     document.getElementById('audiotag1').play();
+// }
+
+function imageLoad()
+{
+   if(keyWord == "speedbird"){
+    document.querySelector("#image").src = "assets/images/British_Airways.jpg";
+   }
+   else if(keyWord == "shamrock"){
+    document.querySelector("#image").src = "assets/images/Aer_Lingus.jpg";
+   }
+   else if(keyWord == "redwood"){
+    document.querySelector("#image").src = "assets/images/Virgin_America.jpg";
+   }  
+   else if(keyWord == "dynasty"){
+    document.querySelector("#image").src = "assets/images/China_Airlines.jpg";
+   }   
+   else if(keyWord == "citrus"){
+    document.querySelector("#image").src = "assets/images/Airtran.jpg";
+   }   
+   else if(keyWord == "cactus"){
+    document.querySelector("#image").src = "assets/images/US_Airways.jpg";
+   }   
+   else if(keyWord == "dragon"){
+    document.querySelector("#image").src = "assets/images/Cathay_Dragon.jpg";
+   }   
+   else if(keyWord == "giant"){
+    document.querySelector("#image").src = "assets/images/Atlas_Air.jpg";
+   }   
+   else if(keyWord == "norstar"){
+    document.querySelector("#image").src = "assets/images/Norwegian.jpg";
+   }   
+        // var x = document.createElement("IMG");
+        // x.setAttribute("src", "assets/images/British_Airways.jpg");
+        // x.setAttribute("width", "304");
+        // x.setAttribute("height", "228");
+        // x.setAttribute("alt", "The Pulpit Rock");
+        // document.body.appendChild(x); 
+ 
 }
 document.onkeyup = keyReleased;

@@ -1,0 +1,39 @@
+body{
+    background-image: url("../images/stardust.png");
+    display: flex;
+    flex-direction: column; 
+    text-align: center;
+    /* background-color: lightgray; */
+    margin: 25px auto;
+    width: 960px;
+    height: auto;
+    border: 2px solid #dddddd;
+    font-family: "Arial Black", sans-serif;
+}
+img{
+    width: 650px;
+    height: 400px;
+    margin: 20px;
+}
+/* class styling */
+.container{
+    width: 100%;
+    flex: 1 0 auto;
+}
+
+/* id styling */
+#title{
+
+    font-size:36px;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+#score{
+    font-size:24px;
+}
+#remainder{
+    padding:10px;
+}
+
+
+

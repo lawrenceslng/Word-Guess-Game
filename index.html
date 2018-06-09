@@ -7,31 +7,47 @@
   <meta charset="UTF-8">
   <title>Word Guess Game - Airline Callsigns</title>
 
-  <!-- Link to CSS and reset CSS and game.js -->
-  <link rel="stylesheet" href="">
+  <!-- Link to CSS and reset CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   
 </head>
 
 <body>
+    <div class = "container">
     <!-- Title of Page Above Game Interface -->
-        <h1>Hangman: Airline Callsign Edition</h1>
+        <div id="title">
+            <h1>Hangman: Airline Callsign Edition</h1>
+        </div>
+    
     <!-- Body of Page -->
     <!-- Wins and Guesses Left at top -->
-    <div>
-        Wins: <span id="Wins"> 0 </span>
-        Number of Guesses Left: <span id="Guesses"> 10 </span>
-    </div>
+        <div id="score">
+            Wins: <span id="Wins"> 0 </span>
+            Number of Guesses Left: <span id="Guesses"> 10 </span>
+        </div>
     <!-- Two columns: left column - image above empty spaces; right column - "Press any key to start" and incorrectly guessed letters -->
-    <div>
+        <div id="imageInterface">
         <!-- Image Div -->
-        Word: <span id="keyWord"></span>
-    </div>
-    <div>
-        Press any key to start
-        Letters Already Guessed: <span id="letsAlreadyGuessed"> </span>
-    </div>
+            <!-- <span id ="image"></span> -->
+            <div>
+                    <img id ="image" src="" alt="placeholder image">
+            </div>
+            
+            Word: <span id="keyWord"></span>
+        </div>
+        <div id="remainder">
+            Press any key to start
+            <br>
+            Letters Already Guessed: <span id="letsAlreadyGuessed"> </span>
+        </div>
 
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
+        <!-- <audio>
+            <source id = "startupmusic" src = "assets/sounds/airland.mp3" type="audio/mpeg" preload="auto">
+        </audio> -->
+        <!-- <audio id="audiotag1" src="assets/sounds/airland.mp3" preload="auto"></audio> -->
+        <script type="text/javascript" src="assets/javascript/game.js"></script>
+    </div>
 </body>
 
 </html>
